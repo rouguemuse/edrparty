@@ -89,48 +89,17 @@ const PRODUCTS = [
     specSpace: "25' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
   {
-    id: 9, name: 'Seating Package — Small (1 Table + 8 Chairs)', nameEs: 'Paquete Pequeño (1 Mesa + 8 Sillas)',
+    id: 9, name: 'Tables & Chairs — Package Pricing', nameEs: 'Mesas y Sillas — Paquetes',
     category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
-    price: 30, priceLabel: '$30',
-    quickFacts: 'Seats up to 8 guests', quickFactsEs: 'Para hasta 8 personas',
-    description: '1 white 6ft banquet table + 8 white folding chairs.',
-    descriptionEs: '1 mesa blanca de banquete de 6ft + 8 sillas blancas plegables.',
+    price: 30, priceLabel: 'From $30',
+    quickFacts: 'Packages from 1 table + 8 chairs up to 6 tables + 50 chairs',
+    quickFactsEs: 'Paquetes desde 1 mesa + 8 sillas hasta 6 mesas + 50 sillas',
+    description: 'White folding chairs and 6ft banquet tables. Multiple package sizes available — from intimate gatherings to large events.',
+    descriptionEs: 'Sillas blancas plegables y mesas de banquete de 6ft. Varios tamaños de paquetes disponibles.',
     image: '/images/tables_ref.png',
     wetDry: 'dry', available: true, availableQuantity: 10, popular: false,
-    specSpace: "6' x 3'", specCapacity: 'Seats 8', specPower: 'None', specAge: 'All Ages'
-  },
-  {
-    id: 10, name: 'Seating Package — Medium (2 Tables + 16 Chairs)', nameEs: 'Paquete Mediano (2 Mesas + 16 Sillas)',
-    category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
-    price: 60, priceLabel: '$60',
-    quickFacts: 'Seats up to 16 guests', quickFactsEs: 'Para hasta 16 personas',
-    description: '2 white 6ft banquet tables + 16 white folding chairs.',
-    descriptionEs: '2 mesas blancas de banquete + 16 sillas blancas plegables.',
-    image: '/images/tables_ref.png',
-    wetDry: 'dry', available: true, availableQuantity: 5, popular: false,
-    specSpace: "12' x 3'", specCapacity: 'Seats 16', specPower: 'None', specAge: 'All Ages'
-  },
-  {
-    id: 11, name: 'Seating Package — Large (4 Tables + 32 Chairs)', nameEs: 'Paquete Grande (4 Mesas + 32 Sillas)',
-    category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
-    price: 120, priceLabel: '$120',
-    quickFacts: 'Seats up to 32 guests', quickFactsEs: 'Para hasta 32 personas',
-    description: '4 white 6ft banquet tables + 32 white folding chairs.',
-    descriptionEs: '4 mesas blancas de banquete + 32 sillas blancas plegables.',
-    image: '/images/tables_ref.png',
-    wetDry: 'dry', available: true, availableQuantity: 2, popular: false,
-    specSpace: "24' x 3'", specCapacity: 'Seats 32', specPower: 'None', specAge: 'All Ages'
-  },
-  {
-    id: 12, name: 'Seating Package — XL (6 Tables + 50 Chairs)', nameEs: 'Paquete Extra Grande (6 Mesas + 50 Sillas)',
-    category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
-    price: 185, priceLabel: '$185',
-    quickFacts: 'Seats up to 50 guests', quickFactsEs: 'Para hasta 50 personas',
-    description: '6 white 6ft banquet tables + 50 white folding chairs.',
-    descriptionEs: '6 mesas blancas de banquete + 50 sillas blancas plegables.',
-    image: '/images/tables_ref.png',
-    wetDry: 'dry', available: true, availableQuantity: 1, popular: false,
-    specSpace: "36' x 3'", specCapacity: 'Seats 50', specPower: 'None', specAge: 'All Ages'
+    specSpace: "6' x 3'", specCapacity: 'Up to 50 guests', specPower: 'None', specAge: 'All Ages',
+    detailsLink: '/rentals/tables-chairs'
   }
 ];
 

@@ -516,19 +516,13 @@
       const isMobile = window.innerWidth <= 768;
       const navLinks = document.querySelector(".nav-links");
       const navActions = document.querySelector(".nav-actions");
-      const mobileWishlist = document.getElementById("mobileWishlistBtn");
-      const mobileLang = document.getElementById("mobileLangBtn");
-      
       if (isMobile) {
         if (navLinks) navLinks.style.display = "none";
-        if (navActions) navActions.style.display = "none";
-        if (mobileWishlist) mobileWishlist.style.display = "block";
-        if (mobileLang) mobileLang.style.display = "block";
+        // Keep nav-actions visible on mobile so language toggle stays accessible
+        if (navActions) navActions.style.display = "flex";
       } else {
         if (navLinks) navLinks.style.display = "flex";
         if (navActions) navActions.style.display = "flex";
-        if (mobileWishlist) mobileWishlist.style.display = "none";
-        if (mobileLang) mobileLang.style.display = "none";
       }
     }
     window.addEventListener("resize", checkHeader);

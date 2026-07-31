@@ -14,6 +14,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div style="background: var(--ink); color: white; padding: 0.4rem 1rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; font-weight: 600; font-family: var(--font-body);">
+    <span style="opacity: 0.9;">🎉 Free Local Delivery on Orders $349+</span>
+    <button class="btn-lang-toggle" onclick="toggleLanguage()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; color: white; cursor: pointer; padding: 0.2rem 0.6rem; font-weight: 700; transition: background 0.2s;">
+      🌐 Español
+    </button>
+  </div>
 
   <!-- Centered Desktop Navigation Bar -->
   <header class="site-header" id="siteHeader">
@@ -33,20 +39,12 @@
       </nav>
 
       <div class="nav-actions">
-        <!-- Language Toggle Button -->
-        <button class="btn-lang-toggle" onclick="toggleLanguage()" style="background:var(--lemon); border: 2px solid var(--ink); border-radius: var(--radius-soft); color:var(--ink); font-weight:700; font-size:0.85rem; cursor:pointer; padding:0.4rem 0.8rem; margin-right: 1rem; box-shadow: 2px 2px 0px var(--ink); transition: transform 0.1s, box-shadow 0.1s;" onmousedown="this.style.transform='translate(2px, 2px)'; this.style.boxShadow='0px 0px 0px var(--ink)';" onmouseup="this.style.transform='translate(0px, 0px)'; this.style.boxShadow='2px 2px 0px var(--ink)';" onmouseleave="this.style.transform='translate(0px, 0px)'; this.style.boxShadow='2px 2px 0px var(--ink)';">
-          🌐 Español
-        </button>
-
         <button class="btn-brutal btn-lemon btn-open-wishlist">
           My Party (<span class="wishlist-count-badge">0</span>)
         </button>
       </div>
       
       <div style="display: flex; gap: 0.5rem; margin-left: auto; align-items:center;" id="mobileHeaderControls">
-        <button class="btn-lang-toggle" onclick="toggleLanguage()" style="background:var(--lemon); border: 2px solid var(--ink); border-radius: var(--radius-soft); color:var(--ink); font-weight:700; font-size:0.8rem; display:none; cursor:pointer; padding:0.3rem 0.6rem; margin-right: 0.5rem; box-shadow: 2px 2px 0px var(--ink);" id="mobileLangBtn">
-          🌐 Español
-        </button>
         <button class="btn-brutal btn-lemon btn-open-wishlist" style="display: none;" id="mobileWishlistBtn">
           My Party (<span class="wishlist-count-badge">0</span>)
         </button>

@@ -1,7 +1,155 @@
-// EDR Party Rentals Inventory & Party Builder System (Bilingual Engine)
+// Full Product Catalog — embedded statically, no API needed
+const PRODUCTS = [
+  {
+    id: 1, name: 'Castle Bounce House with Slide', nameEs: 'Bricolín Castillo con Resbaladilla',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 225, priceLabel: '$225',
+    quickFacts: "Space: 20'x20'", quickFactsEs: "Espacio: 20'x20'",
+    description: 'Classic primary-colored commercial castle bouncer with entry slide. High inflatable walls, safety ramp, and deep jumping bed.',
+    descriptionEs: 'Bricolín inflable comercial estilo castillo con resbaladilla. Paredes altas de seguridad y gran área de salto.',
+    image: '/images/category_bounce.jpg',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "20' x 20'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 2, name: 'Sunshine Splash Water Slide', nameEs: 'Tobogán de Agua Sunshine Splash',
+    category: 'Water Slides', categoryEs: 'Toboganes de Agua', categoryKey: 'water', step: 'water',
+    price: 225, priceLabel: '$225',
+    quickFacts: "Space: 20'x16'", quickFactsEs: "Espacio: 20'x16'",
+    description: 'Bright sunshine yellow and sky blue water slide with steep climbing ladder, safety top canopy, and splash pool.',
+    descriptionEs: 'Tobogán acuático amarillo y azul. Escalera inclinada, toldo de seguridad y alberca.',
+    image: '/images/sunshine20.16.20.png',
+    wetDry: 'wet', available: true, availableQuantity: 1, popular: true,
+    specSpace: "20' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 3, name: 'Green Monster Water Slide', nameEs: 'Tobogán de Agua Monstruo Verde',
+    category: 'Water Slides', categoryEs: 'Toboganes de Agua', categoryKey: 'water', step: 'water',
+    price: 210, priceLabel: '$210',
+    quickFacts: "Space: 28'x14'", quickFactsEs: "Espacio: 28'x14'",
+    description: 'Vibrant green 28ft long commercial water slide. Features deep side rails, slick water runway, and landing pool.',
+    descriptionEs: 'Tobogán de agua comercial verde vibrante de 28 pies de largo.',
+    image: '/images/greenslide28.14.png',
+    wetDry: 'wet', available: true, availableQuantity: 1, popular: true,
+    specSpace: "28' x 14'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 4, name: 'Ninja Turtles Bounce House', nameEs: 'Bricolín Tortugas Ninja',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 175, priceLabel: '$175',
+    quickFacts: "Space: 18'x15'", quickFactsEs: "Espacio: 18'x15'",
+    description: 'Action-packed Ninja Turtles commercial bouncer with high mesh ventilation windows and safety entrance step.',
+    descriptionEs: 'Bricolín temático de las Tortugas Ninja. Ventanas de malla y escalón de seguridad.',
+    image: '/images/Ninjaturlesbounce_18.15.20.png',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "18' x 15'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 5, name: 'Princess Castle Bounce House', nameEs: 'Bricolín Castillo de Princesas',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 160, priceLabel: '$160',
+    quickFacts: "Space: 12'x12'", quickFactsEs: "Espacio: 12'x12'",
+    description: 'Royal pink and purple princess castle bouncer. Compact sizing for smaller backyards and birthday parties.',
+    descriptionEs: 'Bricolín castillo de princesas rosa y morado. Tamaño compacto ideal para patios residenciales.',
+    image: '/images/princess12.12.png',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "12' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 6, name: 'Rainbow Double Slide Bounce Combo', nameEs: 'Combo Inflable Arcoíris Doble Resbaladilla',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 250, priceLabel: '$250',
+    quickFacts: "Space: 30'x16'", quickFactsEs: "Espacio: 30'x16'",
+    description: 'Multi-activity rainbow castle bouncer with dual side exit slides, onion turrets, and central jump area.',
+    descriptionEs: 'Bricolín multi-actividad con doble resbaladilla lateral y área central de salto.',
+    image: '/images/rainbow_combo_studio.jpg',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "30' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 7, name: '20ft Water Slide with Tower & Pool', nameEs: 'Tobogán de Agua de 20ft con Alberca',
+    category: 'Water Slides', categoryEs: 'Toboganes de Agua', categoryKey: 'water', step: 'water',
+    price: 275, priceLabel: '$275',
+    quickFacts: "Space: 20'x16'", quickFactsEs: "Espacio: 20'x16'",
+    description: 'Towering 20ft tall water slide in blue, yellow, and red. Steep climbing ramp, top safety mesh, and deep splash landing pool.',
+    descriptionEs: 'Imponente tobogán acuático de 20 pies de alto. Malla superior de seguridad y alberca.',
+    image: '/images/water_slide_20x16_studio.jpg',
+    wetDry: 'wet', available: true, availableQuantity: 1, popular: true,
+    specSpace: "20' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 8, name: '20ft Dual Bungee Run', nameEs: 'Pista Bungee de Carreras Doble',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 200, priceLabel: '$200',
+    quickFacts: "Space: 25'x12'", quickFactsEs: "Espacio: 25'x12'",
+    description: 'Head-to-head competitive dual lane bungee run. Twin runway lanes, velcro marker batons, and padded back wall.',
+    descriptionEs: 'Pista de carreras bungee interactiva frente a frente. Dos carriles paralelos.',
+    image: '/images/bungee_run_studio.jpg',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "25' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 9, name: 'Seating Package — Small (1 Table + 8 Chairs)', nameEs: 'Paquete Pequeño (1 Mesa + 8 Sillas)',
+    category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
+    price: 30, priceLabel: '$30',
+    quickFacts: 'Seats up to 8 guests', quickFactsEs: 'Para hasta 8 personas',
+    description: '1 white 6ft banquet table + 8 white folding chairs.',
+    descriptionEs: '1 mesa blanca de banquete de 6ft + 8 sillas blancas plegables.',
+    image: '/images/tables_ref.png',
+    wetDry: 'dry', available: true, availableQuantity: 10, popular: false,
+    specSpace: "6' x 3'", specCapacity: 'Seats 8', specPower: 'None', specAge: 'All Ages'
+  },
+  {
+    id: 10, name: 'Seating Package — Medium (2 Tables + 16 Chairs)', nameEs: 'Paquete Mediano (2 Mesas + 16 Sillas)',
+    category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
+    price: 60, priceLabel: '$60',
+    quickFacts: 'Seats up to 16 guests', quickFactsEs: 'Para hasta 16 personas',
+    description: '2 white 6ft banquet tables + 16 white folding chairs.',
+    descriptionEs: '2 mesas blancas de banquete + 16 sillas blancas plegables.',
+    image: '/images/tables_ref.png',
+    wetDry: 'dry', available: true, availableQuantity: 5, popular: false,
+    specSpace: "12' x 3'", specCapacity: 'Seats 16', specPower: 'None', specAge: 'All Ages'
+  },
+  {
+    id: 11, name: 'Seating Package — Large (4 Tables + 32 Chairs)', nameEs: 'Paquete Grande (4 Mesas + 32 Sillas)',
+    category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
+    price: 120, priceLabel: '$120',
+    quickFacts: 'Seats up to 32 guests', quickFactsEs: 'Para hasta 32 personas',
+    description: '4 white 6ft banquet tables + 32 white folding chairs.',
+    descriptionEs: '4 mesas blancas de banquete + 32 sillas blancas plegables.',
+    image: '/images/tables_ref.png',
+    wetDry: 'dry', available: true, availableQuantity: 2, popular: false,
+    specSpace: "24' x 3'", specCapacity: 'Seats 32', specPower: 'None', specAge: 'All Ages'
+  },
+  {
+    id: 12, name: 'Seating Package — XL (6 Tables + 50 Chairs)', nameEs: 'Paquete Extra Grande (6 Mesas + 50 Sillas)',
+    category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
+    price: 185, priceLabel: '$185',
+    quickFacts: 'Seats up to 50 guests', quickFactsEs: 'Para hasta 50 personas',
+    description: '6 white 6ft banquet tables + 50 white folding chairs.',
+    descriptionEs: '6 mesas blancas de banquete + 50 sillas blancas plegables.',
+    image: '/images/tables_ref.png',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: false,
+    specSpace: "36' x 3'", specCapacity: 'Seats 50', specPower: 'None', specAge: 'All Ages'
+  }
+];
 
-// Product Catalog Database (100% Real Equipment Photography & Spanish Translations)
-let PRODUCTS = [];
+// No-op — catalog is now static, API only used for date-specific availability checks
+async function fetchProducts() {
+  if (!state.eventDate) return; // Browse mode: use static catalog as-is
+  try {
+    const res = await fetch(`/api/availability?date=${state.eventDate}`);
+    const data = await res.json();
+    if (data.products && data.products.length > 0) {
+      data.products.forEach(p => {
+        const prod = PRODUCTS.find(x => x.id === p.id);
+        if (prod) prod.available = p.available !== false;
+      });
+    }
+  } catch (e) {
+    console.warn('Could not check date availability:', e);
+  }
+}
 
 // --- CENTRALIZED TRANSLATION ENGINE ---
 const TRANSLATIONS = {

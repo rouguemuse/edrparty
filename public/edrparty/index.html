@@ -19,7 +19,7 @@
   <header class="site-header" id="siteHeader">
     <div class="header-container">
       <a href="#" class="logo-container">
-        <img src="images/edr.png" alt="EDR Party Rentals Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
+        <img src="/edrparty/images/edr.png" alt="EDR Party Rentals Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
         <div id="logoFallback" style="display:none; font-family: var(--font-heading); font-size: 1.5rem; color: var(--cobalt); border: 2px solid var(--ink); padding: 0.2rem 0.5rem;">
           EDR<span style="color:var(--red);">.</span>
         </div>
@@ -34,8 +34,8 @@
 
       <div class="nav-actions">
         <!-- Language Toggle Button -->
-        <button class="btn-lang-toggle" onclick="toggleLanguage()" style="background:none; border:none; color:var(--text-muted); font-weight:700; font-size:0.85rem; cursor:pointer; padding:0 0.5rem; text-decoration:underline;">
-          EN | ES
+        <button class="btn-lang-toggle" onclick="toggleLanguage()" style="background:var(--lemon); border: 2px solid var(--ink); border-radius: var(--radius-soft); color:var(--ink); font-weight:700; font-size:0.85rem; cursor:pointer; padding:0.4rem 0.8rem; margin-right: 1rem; box-shadow: 2px 2px 0px var(--ink); transition: transform 0.1s, box-shadow 0.1s;" onmousedown="this.style.transform='translate(2px, 2px)'; this.style.boxShadow='0px 0px 0px var(--ink)';" onmouseup="this.style.transform='translate(0px, 0px)'; this.style.boxShadow='2px 2px 0px var(--ink)';" onmouseleave="this.style.transform='translate(0px, 0px)'; this.style.boxShadow='2px 2px 0px var(--ink)';">
+          🌐 Español
         </button>
 
         <button class="btn-brutal btn-lemon btn-open-wishlist">
@@ -44,8 +44,8 @@
       </div>
       
       <div style="display: flex; gap: 0.5rem; margin-left: auto; align-items:center;" id="mobileHeaderControls">
-        <button class="btn-lang-toggle" onclick="toggleLanguage()" style="background:none; border:none; color:var(--text-muted); font-weight:700; font-size:0.8rem; display:none; cursor:pointer; padding:0 0.2rem; text-decoration:underline;" id="mobileLangBtn">
-          EN | ES
+        <button class="btn-lang-toggle" onclick="toggleLanguage()" style="background:var(--lemon); border: 2px solid var(--ink); border-radius: var(--radius-soft); color:var(--ink); font-weight:700; font-size:0.8rem; display:none; cursor:pointer; padding:0.3rem 0.6rem; margin-right: 0.5rem; box-shadow: 2px 2px 0px var(--ink);" id="mobileLangBtn">
+          🌐 Español
         </button>
         <button class="btn-brutal btn-lemon btn-open-wishlist" style="display: none;" id="mobileWishlistBtn">
           My Party (<span class="wishlist-count-badge">0</span>)
@@ -57,7 +57,7 @@
   <!-- Editorial Hero Section -->
   <section class="hero-section" id="heroSection">
     <div class="hero-bg-container">
-      <img src="images/heronowords.png" alt="EDR Party Rentals Bounce House" class="hero-bg-img">
+      <img src="/edrparty/images/heronowords.png" alt="EDR Party Rentals Bounce House" class="hero-bg-img">
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -458,7 +458,7 @@
     <div class="footer-container">
       <div style="grid-column: span 2;">
         <div class="footer-logo-badge">
-          <img src="images/edr.png" alt="EDR Party Rentals" class="footer-logo-img" onerror="this.style.display='none'">
+          <img src="/edrparty/images/edr.png" alt="EDR Party Rentals" class="footer-logo-img" onerror="this.style.display='none'">
         </div>
         <p style="font-size: 15px; color: rgba(255, 255, 255, 0.75); max-width: 400px; line-height: 1.5;">Bounce houses, white banquet tables, chairs and party gear—delivered, sanitized and ready before your guests arrive.</p>
         <p style="font-size: 14px; font-weight: 600; color: var(--lemon); margin-top: 0.8rem;">🇲🇽 ¡Hablamos Español! Atención personalizada en tu idioma para eventos en Central Texas.</p>

@@ -13,7 +13,6 @@ export default function EdrPartyPage() {
   // Fix relative asset paths for /edrparty subfolder
   htmlContent = htmlContent.replace(/href="styles\.css"/g, 'href="/edrparty/styles.css"');
   htmlContent = htmlContent.replace(/src="app\.js"/g, 'src="/edrparty/app.js"');
-  htmlContent = htmlContent.replace(/src="images\//g, 'src="/edrparty/images/');
 
   return (
     <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

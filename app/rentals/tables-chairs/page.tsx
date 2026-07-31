@@ -27,8 +27,8 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
         <div className="max-w-[1240px] mx-auto px-4 h-20 flex items-center justify-between">
           <Link href={`/?lang=${lang}`} className="font-bold text-2xl tracking-tighter text-slate-900" style={{fontFamily: 'Bricolage Grotesque, sans-serif'}}>EDR PARTY</Link>
           <div className="flex gap-4">
-            <Link href={`/?lang=${lang === 'en' ? 'es' : 'en'}`} className="font-semibold text-sm">
-              {lang === 'en' ? 'EN | ES' : 'ES | EN'}
+            <Link href={`/?lang=${lang === 'en' ? 'es' : 'en'}`} className="font-bold text-sm bg-yellow-400 border-2 border-slate-900 rounded-lg px-3 py-1.5 shadow-[2px_2px_0px_rgba(15,23,42,1)] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-none transition-all text-slate-900 flex items-center gap-1">
+              {lang === 'en' ? '🌐 Español' : '🌐 English'}
             </Link>
           </div>
         </div>

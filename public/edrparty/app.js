@@ -122,10 +122,14 @@ function applyLanguageUI() {
   const isEs = state.lang === "es";
 
   // Toggle button texts
-  const langBtns = document.querySelectorAll(".btn-lang-toggle");
-  langBtns.forEach(btn => {
-    btn.innerHTML = isEs ? "🌐 English" : "🌐 Español";
-  });
+  const btnEn = document.getElementById('btnEn');
+  const btnEs = document.getElementById('btnEs');
+  if (btnEn && btnEs) {
+    btnEn.style.background = isEs ? 'transparent' : 'white';
+    btnEn.style.color = isEs ? 'white' : 'var(--ink)';
+    btnEs.style.background = isEs ? 'white' : 'transparent';
+    btnEs.style.color = isEs ? 'var(--ink)' : 'white';
+  }
 
   // Nav links
   const partyLinks = document.querySelectorAll('a[href="#partyBuilderSection"]');

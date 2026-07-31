@@ -39,9 +39,16 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn-brutal btn-lemon btn-open-wishlist">
-          My Party (<span class="wishlist-count-badge">0</span>)
-        </button>
+        <div style="display:flex; align-items:center; gap:0.5rem; background:var(--ink); border-radius:999px; padding:0.25rem; border:2px solid var(--ink);">
+          <button onclick="if(window.state.lang!=='en'){toggleLanguage()}" id="btnEn"
+            style="background:white; color:var(--ink); border:none; border-radius:999px; padding:0.35rem 0.9rem; font-weight:700; font-size:0.8rem; cursor:pointer; transition:all 0.2s;">
+            English
+          </button>
+          <button onclick="if(window.state.lang!=='es'){toggleLanguage()}" id="btnEs"
+            style="background:transparent; color:white; border:none; border-radius:999px; padding:0.35rem 0.9rem; font-weight:700; font-size:0.8rem; cursor:pointer; transition:all 0.2s;">
+            Español
+          </button>
+        </div>
       </div>
       
       <div style="display: flex; gap: 0.5rem; margin-left: auto; align-items:center;" id="mobileHeaderControls">

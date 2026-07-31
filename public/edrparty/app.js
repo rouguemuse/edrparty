@@ -211,42 +211,7 @@ const ELIGIBLE_ZIPS = [
   "76527"  // Florence
 ];
 
-async function fetchProducts() {
-  try {
-    const dateQuery = state.eventDate ? \`?date=\${state.eventDate}\` : '';
-    const res = await fetch(\`/api/availability\${dateQuery}\`);
-    const data = await res.json();
-    if (data.products) {
-      PRODUCTS = data.products.map(p => ({
-        id: p.id,
-        name: p.name_en,
-        nameEs: p.name_es,
-        category: p.category === 'bounce' ? 'Bounce Houses' : p.category === 'water' ? 'Water Slides' : p.category === 'seating' ? 'Tables & Chairs' : 'Packages',
-        categoryEs: p.category === 'bounce' ? 'Bricolines' : p.category === 'water' ? 'Toboganes de Agua' : p.category === 'seating' ? 'Mesas y Sillas' : 'Paquetes',
-        categoryKey: p.category,
-        step: p.category,
-        price: p.base_price,
-        priceLabel: \`$\${p.base_price}\`,
-        quickFacts: \`Space: \${p.setup_length}'x\${p.setup_width}'\`,
-        quickFactsEs: \`Espacio: \${p.setup_length}'x\${p.setup_width}'\`,
-        description: p.description_en,
-        descriptionEs: p.description_es,
-        image: p.image,
-        accentColor: '#20D9D5',
-        specSpace: \`\${p.setup_length}' x \${p.setup_width}'\`,
-        specCapacity: p.tracking_mode === 'quantity' ? 'Quantity item' : 'Capacity info',
-        specPower: p.outlets_required ? \`\${p.outlets_required} Blower(s)\` : 'None',
-        specAge: 'All Ages',
-        wetDry: p.water_required ? 'wet' : 'dry',
-        popular: true,
-        available: p.available !== false,
-        availableQuantity: p.availableQuantity
-      }));
-    }
-  } catch (e) {
-    console.error('Failed to fetch products', e);
-  }
-}
+
 
 document.addEventListener("DOMContentLoaded", async () => {
   await fetchProducts();

@@ -244,7 +244,7 @@
       </p>
 
       <!-- Clean City Pills -->
-      <div class="city-pill-list">
+      <div class="city-pill-list" style="margin-top: 1rem;">
         <span class="city-pill">Austin</span>
         <span class="city-pill">Cedar Park</span>
         <span class="city-pill">Leander</span>
@@ -255,13 +255,13 @@
         <span class="city-pill">Florence</span>
       </div>
 
-      <button class="btn-brutal btn-white" style="margin-top: 1.5rem;" onclick="toggleMapDetails()" id="btnToggleMap">
+      <button class="btn-brutal btn-white desktop-hide-map-btn" style="margin-top: 1.5rem; display: none;" onclick="toggleMapDetails()" id="btnToggleMap">
         View Delivery Details & Map &darr;
       </button>
     </div>
 
-    <!-- Collapsible Full Map Details Container -->
-    <div id="collapsibleMapContainer" style="display: none;">
+    <!-- Full Map Details Container (Visible by default on desktop) -->
+    <div id="collapsibleMapContainer" style="display: block; margin-top: 2rem;">
       <div class="map-container-grid">
         <!-- Left Box: Delivery Tiers -->
         <div>
@@ -272,22 +272,22 @@
               <div style="border-left: 4px solid var(--lemon); padding-left: 1rem;">
                 <span style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--ink); display: block;">0 – 15 MILES</span>
                 <span style="font-size: 0.95rem; font-weight: 700; color: var(--cobalt);">FREE on Orders $349+</span>
-                <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">($49 flat fee for orders under $349)</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted); display: block;">($39 standard delivery fee for orders under $349)</span>
               </div>
 
               <div style="border-left: 4px solid var(--cobalt); padding-left: 1rem;">
                 <span style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--ink); display: block;">16 – 25 MILES</span>
-                <span style="font-size: 0.95rem; font-weight: 700; color: var(--ink);">$69 Standard Delivery Fee</span>
+                <span style="font-size: 0.95rem; font-weight: 700; color: var(--ink);">$69 Delivery & Setup</span>
               </div>
 
               <div style="border-left: 4px solid var(--red); padding-left: 1rem;">
                 <span style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--ink); display: block;">26 – 35 MILES</span>
-                <span style="font-size: 0.95rem; font-weight: 700; color: var(--ink);">$89+ or Custom Logistics Quote</span>
+                <span style="font-size: 0.95rem; font-weight: 700; color: var(--ink);">$89 Delivery & Setup</span>
               </div>
             </div>
 
             <div style="margin-top: 1.5rem; border-top: 1px solid rgba(10,20,47,0.15); padding-top: 1rem;">
-              <p style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">Enter your ZIP code in our availability bar above for instant delivery calculations.</p>
+              <p style="font-size: 0.9rem; font-weight: 500; color: var(--text-muted);">Delivery, setup, and pickup are included in every delivery fee tier. Enter your address in our availability bar above for instant calculations.</p>
             </div>
           </div>
         </div>
@@ -298,7 +298,11 @@
             <span style="font-family: var(--font-heading); font-size: 0.85rem; color: var(--cobalt);">APPROXIMATE SERVICE ZONES</span>
             <span style="font-weight: 700; font-size: 0.75rem; background-color: var(--lemon); padding: 0.2rem 0.6rem; border: 1px solid var(--ink); border-radius: 4px;">EDR FLORENCE DISPATCH</span>
           </div>
-          <div id="leafletMap" style="width: 100%; height: 350px; border-radius: 6px; z-index: 1;"></div>
+          <div id="leafletMap" style="width: 100%; height: 400px; min-height: 400px; border-radius: 6px; z-index: 1;">
+            <div id="mapFallbackMsg" style="display:none; padding: 3rem 1rem; text-align: center; color: var(--text-muted); font-size: 0.95rem;">
+              The delivery map is temporarily unavailable. Enter your address above or contact us to confirm delivery.
+            </div>
+          </div>
         </div>
       </div>
     </div>

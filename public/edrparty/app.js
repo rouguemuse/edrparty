@@ -3,7 +3,7 @@ const PRODUCTS = [
   {
     id: 1, name: 'Castle Bounce House with Slide', nameEs: 'Bricolín Castillo con Resbaladilla',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
-    price: 225, priceLabel: '$225',
+    price: 155, priceLabel: '$155 + delivery',
     quickFacts: "Space: 20'x20'", quickFactsEs: "Espacio: 20'x20'",
     description: 'Classic primary-colored commercial castle bouncer with entry slide. High inflatable walls, safety ramp, and deep jumping bed.',
     descriptionEs: 'Bricolín inflable comercial estilo castillo con resbaladilla. Paredes altas de seguridad y gran área de salto.',
@@ -14,7 +14,7 @@ const PRODUCTS = [
   {
     id: 2, name: 'Sunshine Splash Water Slide', nameEs: 'Tobogán de Agua Sunshine Splash',
     category: 'Water Slides', categoryEs: 'Toboganes de Agua', categoryKey: 'water', step: 'water',
-    price: 225, priceLabel: '$225',
+    price: 285, priceLabel: '$285 + delivery',
     quickFacts: "Space: 20'x16'", quickFactsEs: "Espacio: 20'x16'",
     description: 'Bright sunshine yellow and sky blue water slide with steep climbing ladder, safety top canopy, and splash pool.',
     descriptionEs: 'Tobogán acuático amarillo y azul. Escalera inclinada, toldo de seguridad y alberca.',
@@ -23,9 +23,9 @@ const PRODUCTS = [
     specSpace: "20' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
   {
-    id: 3, name: 'Green Monster Water Slide', nameEs: 'Tobogán de Agua Monstruo Verde',
+    id: 3, name: 'Green Monster Water Slide (28ft)', nameEs: 'Tobogán de Agua Monstruo Verde (28ft)',
     category: 'Water Slides', categoryEs: 'Toboganes de Agua', categoryKey: 'water', step: 'water',
-    price: 210, priceLabel: '$210',
+    price: 325, priceLabel: '$325 + delivery',
     quickFacts: "Space: 28'x14'", quickFactsEs: "Espacio: 28'x14'",
     description: 'Vibrant green 28ft long commercial water slide. Features deep side rails, slick water runway, and landing pool.',
     descriptionEs: 'Tobogán de agua comercial verde vibrante de 28 pies de largo.',
@@ -36,7 +36,7 @@ const PRODUCTS = [
   {
     id: 4, name: 'Ninja Turtles Bounce House', nameEs: 'Bricolín Tortugas Ninja',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
-    price: 175, priceLabel: '$175',
+    price: 165, priceLabel: '$165 + delivery',
     quickFacts: "Space: 18'x15'", quickFactsEs: "Espacio: 18'x15'",
     description: 'Action-packed Ninja Turtles commercial bouncer with high mesh ventilation windows and safety entrance step.',
     descriptionEs: 'Bricolín temático de las Tortugas Ninja. Ventanas de malla y escalón de seguridad.',
@@ -47,7 +47,7 @@ const PRODUCTS = [
   {
     id: 5, name: 'Princess Castle Bounce House', nameEs: 'Bricolín Castillo de Princesas',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
-    price: 160, priceLabel: '$160',
+    price: 155, priceLabel: '$155 + delivery',
     quickFacts: "Space: 12'x12'", quickFactsEs: "Espacio: 12'x12'",
     description: 'Royal pink and purple princess castle bouncer. Compact sizing for smaller backyards and birthday parties.',
     descriptionEs: 'Bricolín castillo de princesas rosa y morado. Tamaño compacto ideal para patios residenciales.',
@@ -58,7 +58,7 @@ const PRODUCTS = [
   {
     id: 13, name: 'Mickey Mouse Clubhouse Bounce House (12x12)', nameEs: 'Bricolín Mickey Mouse Clubhouse (12x12)',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
-    price: 165, priceLabel: '$165',
+    price: 165, priceLabel: '$165 + delivery',
     quickFacts: "Space: 12'x12'", quickFactsEs: "Espacio: 12'x12'",
     description: 'Official Disney Mickey Mouse Clubhouse bounce house featuring Mickey, Minnie, Donald, Goofy, Daisy, and Pluto.',
     descriptionEs: 'Bricolín oficial de Mickey Mouse Clubhouse con Mickey, Minnie, Donald, Goofy, Daisy y Pluto.',
@@ -69,7 +69,7 @@ const PRODUCTS = [
   {
     id: 14, name: 'Toy Story Bounce House (14x12)', nameEs: 'Bricolín Toy Story (14x12)',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
-    price: 175, priceLabel: '$175',
+    price: 165, priceLabel: '$165 + delivery',
     quickFacts: "Space: 14'x12'", quickFactsEs: "Espacio: 14'x12'",
     description: 'Disney Pixar Toy Story bounce house featuring Woody, Buzz Lightyear, Jessie, Mr. Potato Head, Hamm, and Rex.',
     descriptionEs: 'Bricolín de Toy Story Disney Pixar con Woody, Buzz Lightyear, Jessie, Sr. Cara de Papa y amigos.',
@@ -80,7 +80,7 @@ const PRODUCTS = [
   {
     id: 6, name: 'Rainbow Double Slide Bounce Combo', nameEs: 'Combo Inflable Arcoíris Doble Resbaladilla',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
-    price: 250, priceLabel: '$250',
+    price: 235, priceLabel: '$235 + delivery',
     quickFacts: "Space: 30'x16'", quickFactsEs: "Espacio: 30'x16'",
     description: 'Multi-activity rainbow castle bouncer with dual side exit slides, onion turrets, and central jump area.',
     descriptionEs: 'Bricolín multi-actividad con doble resbaladilla lateral y área central de salto.',
@@ -91,7 +91,7 @@ const PRODUCTS = [
   {
     id: 7, name: '20ft Water Slide with Tower & Pool', nameEs: 'Tobogán de Agua de 20ft con Alberca',
     category: 'Water Slides', categoryEs: 'Toboganes de Agua', categoryKey: 'water', step: 'water',
-    price: 275, priceLabel: '$275',
+    price: 295, priceLabel: '$295 + delivery',
     quickFacts: "Space: 20'x16'", quickFactsEs: "Espacio: 20'x16'",
     description: 'Towering 20ft tall water slide in blue, yellow, and red. Steep climbing ramp, top safety mesh, and deep splash landing pool.',
     descriptionEs: 'Imponente tobogán acuático de 20 pies de alto. Malla superior de seguridad y alberca.',
@@ -100,9 +100,9 @@ const PRODUCTS = [
     specSpace: "20' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
   {
-    id: 8, name: '20ft Dual Bungee Run', nameEs: 'Pista Bungee de Carreras Doble',
+    id: 8, name: '20ft Dual Bungee Run', nameEs: 'Pista Bungee de Carreras Doble (25ft)',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
-    price: 200, priceLabel: '$200',
+    price: 345, priceLabel: '$345 + delivery',
     quickFacts: "Space: 25'x12'", quickFactsEs: "Espacio: 25'x12'",
     description: 'Head-to-head competitive dual lane bungee run. Twin runway lanes, velcro marker batons, and padded back wall.',
     descriptionEs: 'Pista de carreras bungee interactiva frente a frente. Dos carriles paralelos.',
@@ -113,7 +113,7 @@ const PRODUCTS = [
   {
     id: 9, name: 'Tables & Chairs — Package Pricing', nameEs: 'Mesas y Sillas — Paquetes',
     category: 'Tables & Chairs', categoryEs: 'Mesas y Sillas', categoryKey: 'seating', step: 'seating',
-    price: 30, priceLabel: 'From $30',
+    price: 34, priceLabel: 'From $34 + delivery',
     quickFacts: 'Packages from 1 table + 8 chairs up to 6 tables + 50 chairs',
     quickFactsEs: 'Paquetes desde 1 mesa + 8 sillas hasta 6 mesas + 50 sillas',
     description: 'White folding chairs and 6ft banquet tables. Multiple package sizes available — from intimate gatherings to large events.',
@@ -951,35 +951,35 @@ window.updateWishlistCount = function() {
 // Map Initialization
 document.addEventListener("DOMContentLoaded", () => {
   const mapEl = document.getElementById("leafletMap");
+  const fallbackEl = document.getElementById("mapFallbackMsg");
   if (!mapEl) return;
   
-  // Center on Florence, TX
-  const florenceLat = 30.8430;
-  const florenceLng = -97.7950;
-  
-  const map = L.map('leafletMap', { zoomControl: false, dragging: false, scrollWheelZoom: false }).setView([florenceLat, florenceLng], 9);
-  window.edrMap = map;
-  
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CARTO'
-  }).addTo(map);
-  
-  // Rings
-  const milesToMeters = 1609.34;
-  
-  // 50 miles (Zone 4)
-  L.circle([florenceLat, florenceLng], { radius: 50 * milesToMeters, color: '#ef4444', fillOpacity: 0.05, weight: 1, dashArray: '4' }).addTo(map);
-  
-  // 35 miles (Zone 3)
-  L.circle([florenceLat, florenceLng], { radius: 35 * milesToMeters, color: '#f59e0b', fillOpacity: 0.05, weight: 1.5 }).addTo(map);
-  
-  // 25 miles (Zone 2)
-  L.circle([florenceLat, florenceLng], { radius: 25 * milesToMeters, color: '#3b82f6', fillOpacity: 0.1, weight: 2 }).addTo(map);
-  
-  // 15 miles (Zone 1)
-  L.circle([florenceLat, florenceLng], { radius: 15 * milesToMeters, color: '#10b981', fillOpacity: 0.2, weight: 2 }).addTo(map);
-  
-  // Florence Hub Marker
-  L.circleMarker([florenceLat, florenceLng], { radius: 6, color: '#000', fillColor: '#fff', fillOpacity: 1, weight: 2 }).addTo(map).bindPopup("EDR Dispatch (Florence)");
+  try {
+    if (typeof L === 'undefined') throw new Error("Leaflet library not loaded");
+    
+    // Center on Florence, TX
+    const florenceLat = 30.8430;
+    const florenceLng = -97.7950;
+    
+    const map = L.map('leafletMap', { zoomControl: false, dragging: false, scrollWheelZoom: false }).setView([florenceLat, florenceLng], 9);
+    window.edrMap = map;
+    
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap &copy; CARTO'
+    }).addTo(map);
+    
+    const milesToMeters = 1609.34;
+    L.circle([florenceLat, florenceLng], { radius: 50 * milesToMeters, color: '#ef4444', fillOpacity: 0.05, weight: 1, dashArray: '4' }).addTo(map);
+    L.circle([florenceLat, florenceLng], { radius: 35 * milesToMeters, color: '#f59e0b', fillOpacity: 0.05, weight: 1.5 }).addTo(map);
+    L.circle([florenceLat, florenceLng], { radius: 25 * milesToMeters, color: '#3b82f6', fillOpacity: 0.1, weight: 2 }).addTo(map);
+    L.circle([florenceLat, florenceLng], { radius: 15 * milesToMeters, color: '#10b981', fillOpacity: 0.2, weight: 2 }).addTo(map);
+    
+    L.circleMarker([florenceLat, florenceLng], { radius: 6, color: '#000', fillColor: '#fff', fillOpacity: 1, weight: 2 }).addTo(map).bindPopup("EDR Dispatch (Florence)");
+    
+    setTimeout(() => { if (window.edrMap) window.edrMap.invalidateSize(); }, 300);
+  } catch (err) {
+    console.error("Map render failed:", err);
+    if (fallbackEl) fallbackEl.style.display = "block";
+  }
 });
 

@@ -55,10 +55,10 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
           </h2>
           <div className="flex flex-col gap-4">
             {[
-              { t: 1, c: 8, p: (table?.base_price || 10) + (chair?.base_price || 2.5) * 8 },
-              { t: 2, c: 16, p: (table?.base_price || 10) * 2 + (chair?.base_price || 2.5) * 16 },
-              { t: 3, c: 24, p: (table?.base_price || 10) * 3 + (chair?.base_price || 2.5) * 24 },
-              { t: 4, c: 32, p: (table?.base_price || 10) * 4 + (chair?.base_price || 2.5) * 32 },
+              { t: 1, c: 8, p: 34 },
+              { t: 2, c: 16, p: 68 },
+              { t: 3, c: 24, p: 102 },
+              { t: 4, c: 32, p: 136 },
             ].map((pkg, i) => (
               <div key={i} className="flex justify-between items-center p-4 border rounded-xl hover:border-blue-500 transition-colors cursor-pointer bg-slate-50 hover:bg-white">
                 <div>

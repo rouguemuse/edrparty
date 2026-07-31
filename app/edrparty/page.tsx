@@ -11,8 +11,8 @@ export default function EdrPartyPage() {
   let htmlContent = fs.readFileSync(filePath, 'utf8');
 
   // Fix relative asset paths for /edrparty subfolder
-  htmlContent = htmlContent.replace(/href="styles\.css"/g, 'href="/edrparty/styles.css"');
-  htmlContent = htmlContent.replace(/src="app\.js"/g, 'src="/edrparty/app.js"');
+  htmlContent = htmlContent.replace(/href="styles\.css"/g, 'href="/edrparty/styles.css?v=8"');
+  htmlContent = htmlContent.replace(/src="app\.js"/g, 'src="/edrparty/app.js?v=8"');
 
   return (
     <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

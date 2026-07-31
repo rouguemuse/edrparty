@@ -10,7 +10,7 @@ const CATALOG = [
     base_price: 225.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 20, setup_width: 20, setup_height: 15,
     outlets_required: 1, water_required: 0,
-    image: '/edrparty/images/category_bounce.jpg', active: 1,
+    image: '/images/category_bounce.jpg', active: 1,
     available: true, availableQuantity: 1,
   },
   {
@@ -21,7 +21,7 @@ const CATALOG = [
     base_price: 225.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 20, setup_width: 16, setup_height: 20,
     outlets_required: 1, water_required: 1,
-    image: '/edrparty/images/sunshine20.16.20.png', active: 1,
+    image: '/images/sunshine20.16.20.png', active: 1,
     available: true, availableQuantity: 1,
   },
   {
@@ -32,7 +32,7 @@ const CATALOG = [
     base_price: 210.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 28, setup_width: 14, setup_height: 15,
     outlets_required: 1, water_required: 1,
-    image: '/edrparty/images/greenslide28.14.png', active: 1,
+    image: '/images/greenslide28.14.png', active: 1,
     available: true, availableQuantity: 1,
   },
   {
@@ -43,7 +43,7 @@ const CATALOG = [
     base_price: 175.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 18, setup_width: 15, setup_height: 20,
     outlets_required: 1, water_required: 0,
-    image: '/edrparty/images/Ninjaturlesbounce_18.15.20.png', active: 1,
+    image: '/images/Ninjaturlesbounce_18.15.20.png', active: 1,
     available: true, availableQuantity: 1,
   },
   {
@@ -54,7 +54,7 @@ const CATALOG = [
     base_price: 160.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 12, setup_width: 12, setup_height: 12,
     outlets_required: 1, water_required: 0,
-    image: '/edrparty/images/princess12.12.png', active: 1,
+    image: '/images/princess12.12.png', active: 1,
     available: true, availableQuantity: 1,
   },
   {
@@ -65,7 +65,7 @@ const CATALOG = [
     base_price: 250.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 30, setup_width: 16, setup_height: 15,
     outlets_required: 1, water_required: 0,
-    image: '/edrparty/images/rainbow_combo_studio.jpg', active: 1,
+    image: '/images/rainbow_combo_studio.jpg', active: 1,
     available: true, availableQuantity: 1,
   },
   {
@@ -76,7 +76,7 @@ const CATALOG = [
     base_price: 275.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 20, setup_width: 16, setup_height: 20,
     outlets_required: 1, water_required: 1,
-    image: '/edrparty/images/water_slide_20x16_studio.jpg', active: 1,
+    image: '/images/water_slide_20x16_studio.jpg', active: 1,
     available: true, availableQuantity: 1,
   },
   {
@@ -87,7 +87,7 @@ const CATALOG = [
     base_price: 200.0, tracking_mode: 'serialized', total_quantity: 1,
     setup_length: 25, setup_width: 12, setup_height: 8,
     outlets_required: 1, water_required: 0,
-    image: '/edrparty/images/bungee_run_studio.jpg', active: 1,
+    image: '/images/bungee_run_studio.jpg', active: 1,
     available: true, availableQuantity: 1,
   },
   // Tables & Chairs — shown as packages on the seating page, not individual items in catalog
@@ -99,7 +99,7 @@ const CATALOG = [
     base_price: 30.0, tracking_mode: 'quantity', total_quantity: 10,
     setup_length: 6, setup_width: 3, setup_height: 3,
     outlets_required: 0, water_required: 0,
-    image: '/edrparty/images/tables_ref.png', active: 1,
+    image: '/images/tables_ref.png', active: 1,
     available: true, availableQuantity: 10,
   },
   {
@@ -110,7 +110,7 @@ const CATALOG = [
     base_price: 60.0, tracking_mode: 'quantity', total_quantity: 5,
     setup_length: 12, setup_width: 3, setup_height: 3,
     outlets_required: 0, water_required: 0,
-    image: '/edrparty/images/tables_ref.png', active: 1,
+    image: '/images/tables_ref.png', active: 1,
     available: true, availableQuantity: 5,
   },
   {
@@ -121,7 +121,7 @@ const CATALOG = [
     base_price: 120.0, tracking_mode: 'quantity', total_quantity: 2,
     setup_length: 24, setup_width: 3, setup_height: 3,
     outlets_required: 0, water_required: 0,
-    image: '/edrparty/images/tables_ref.png', active: 1,
+    image: '/images/tables_ref.png', active: 1,
     available: true, availableQuantity: 2,
   },
   {
@@ -132,7 +132,7 @@ const CATALOG = [
     base_price: 185.0, tracking_mode: 'quantity', total_quantity: 1,
     setup_length: 36, setup_width: 3, setup_height: 3,
     outlets_required: 0, water_required: 0,
-    image: '/edrparty/images/tables_ref.png', active: 1,
+    image: '/images/tables_ref.png', active: 1,
     available: true, availableQuantity: 1,
   },
 ];
@@ -157,3 +157,4 @@ export async function GET(request: Request) {
     return NextResponse.json({ date, products: CATALOG });
   }
 }
+

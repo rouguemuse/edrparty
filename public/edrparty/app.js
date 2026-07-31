@@ -400,7 +400,7 @@ function renderCatalog() {
     card.innerHTML = `
       <div class="product-image-container">
         <div class="badge-container">${badgeHtml}</div>
-        <img class="product-image" src="${product.image}" alt="${displayName}" onerror="this.src='/edrparty/images/product_placeholder.jpg'">
+        <img class="product-image" src="${product.image}" alt="${displayName}" onerror="this.src='/images/product_placeholder.jpg'">
       </div>
       <div class="product-info-wrap">
         <span class="product-category-tag">${displayCategory}</span>
@@ -507,7 +507,7 @@ function renderWishlistDrawer() {
     const displayName = isEs ? item.nameEs : item.name;
 
     itemEl.innerHTML = `
-      <img src="${item.image}" alt="${displayName}" class="wishlist-item-img" onerror="this.src='/edrparty/images/product_placeholder.jpg'">
+      <img src="${item.image}" alt="${displayName}" class="wishlist-item-img" onerror="this.src='/images/product_placeholder.jpg'">
       <div>
         <h5 style="font-size:0.95rem;">${displayName}</h5>
         <span style="font-family:var(--font-body); font-weight:700; font-size:0.9rem; color:var(--cobalt);">${item.priceLabel}</span>
@@ -550,7 +550,7 @@ function openDetailsDrawer(productId) {
 
   content.innerHTML = `
     <div style="aspect-ratio:4/3; border:var(--border-clean); border-radius:var(--radius-soft); overflow:hidden; margin-bottom:1.2rem;">
-      <img src="${product.image}" alt="${displayName}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='/edrparty/images/product_placeholder.jpg'">
+      <img src="${product.image}" alt="${displayName}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='/images/product_placeholder.jpg'">
     </div>
     
     <h3 style="font-size: 1.8rem; margin-bottom: 0.3rem;">${displayName}</h3>
@@ -872,3 +872,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // Florence Hub Marker
   L.circleMarker([florenceLat, florenceLng], { radius: 6, color: '#000', fillColor: '#fff', fillOpacity: 1, weight: 2 }).addTo(map).bindPopup("EDR Dispatch (Florence)");
 });
+

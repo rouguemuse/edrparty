@@ -10,19 +10,36 @@ export default async function AdminDashboard() {
     redirect('/admin/login');
   }
 
-  // Fetch data
-  const { rows: inquiries } = await db.execute(`
-    SELECT * FROM inquiries ORDER BY created_at DESC LIMIT 50
-  `);
+  // Fetch data safely with fallback for environments without SQLite db file
+  let inquiries: any[] = [];
+  let reservations: any[] = [];
+  let products: any[] = [];
 
-  const { rows: reservations } = await db.execute(`
-    SELECT r.*, i.customer_name, i.inquiry_number, i.event_address, i.city, i.zip, i.destination_latitude, i.destination_longitude, i.delivery_fee as inq_fee, i.preferred_payment_method
-    FROM reservations r
-    LEFT JOIN inquiries i ON r.inquiry_id = i.id
-    ORDER BY r.event_date DESC LIMIT 50
-  `);
+  try {
+    const inqRes = await db.execute(`SELECT * FROM inquiries ORDER BY created_at DESC LIMIT 50`);
+    inquiries = inqRes.rows as any[];
+  } catch (e) {
+    console.warn('Inquiries DB query skipped:', e);
+  }
 
-  const { rows: products } = await db.execute('SELECT * FROM products');
+  try {
+    const resRes = await db.execute(`
+      SELECT r.*, i.customer_name, i.inquiry_number, i.event_address, i.city, i.zip, i.destination_latitude, i.destination_longitude, i.delivery_fee as inq_fee, i.preferred_payment_method
+      FROM reservations r
+      LEFT JOIN inquiries i ON r.inquiry_id = i.id
+      ORDER BY r.event_date DESC LIMIT 50
+    `);
+    reservations = resRes.rows as any[];
+  } catch (e) {
+    console.warn('Reservations DB query skipped:', e);
+  }
+
+  try {
+    const prodRes = await db.execute('SELECT * FROM products');
+    products = prodRes.rows as any[];
+  } catch (e) {
+    console.warn('Products DB query skipped:', e);
+  }
 
   // Route Grouping Logic (Destination-to-Destination < 15 miles on same date)
   function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {

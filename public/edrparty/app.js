@@ -56,6 +56,28 @@ const PRODUCTS = [
     specSpace: "12' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
   {
+    id: 13, name: 'Mickey Mouse Clubhouse Bounce House (12x12)', nameEs: 'Bricolín Mickey Mouse Clubhouse (12x12)',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 165, priceLabel: '$165',
+    quickFacts: "Space: 12'x12'", quickFactsEs: "Espacio: 12'x12'",
+    description: 'Official Disney Mickey Mouse Clubhouse bounce house featuring Mickey, Minnie, Donald, Goofy, Daisy, and Pluto.',
+    descriptionEs: 'Bricolín oficial de Mickey Mouse Clubhouse con Mickey, Minnie, Donald, Goofy, Daisy y Pluto.',
+    image: '/images/mickey_park_12x12.jpeg',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "12' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 14, name: 'Toy Story Bounce House (14x12)', nameEs: 'Bricolín Toy Story (14x12)',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 175, priceLabel: '$175',
+    quickFacts: "Space: 14'x12'", quickFactsEs: "Espacio: 14'x12'",
+    description: 'Disney Pixar Toy Story bounce house featuring Woody, Buzz Lightyear, Jessie, Mr. Potato Head, Hamm, and Rex.',
+    descriptionEs: 'Bricolín de Toy Story Disney Pixar con Woody, Buzz Lightyear, Jessie, Sr. Cara de Papa y amigos.',
+    image: '/images/toy_story_14x12.jpeg',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "14' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
     id: 6, name: 'Rainbow Double Slide Bounce Combo', nameEs: 'Combo Inflable Arcoíris Doble Resbaladilla',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
     price: 250, priceLabel: '$250',

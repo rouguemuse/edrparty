@@ -494,8 +494,14 @@ function renderCatalog() {
         <p class="product-quick-facts">${displayFacts}</p>
 
         <div class="card-actions">
-          <button class="${actionBtnClass}" onclick="toggleWishlist(${product.id})">${actionBtnText}</button>
-          <button class="btn-view-details-link" onclick="openDetailsDrawer(${product.id})">${isEs ? 'Detalles &rarr;' : 'View details &rarr;'}</button>
+          ${product.detailsLink
+            ? `<a class="btn-add-party" href="${product.detailsLink}" style="text-decoration:none; text-align:center;">${isEs ? 'Ver Paquetes →' : 'View Packages →'}</a>`
+            : `<button class="${actionBtnClass}" onclick="toggleWishlist(${product.id})">${actionBtnText}</button>`
+          }
+          ${product.detailsLink
+            ? ``
+            : `<button class="btn-view-details-link" onclick="openDetailsDrawer(${product.id})">${isEs ? 'Detalles &rarr;' : 'View details &rarr;'}</button>`
+          }
         </div>
       </div>
     `;

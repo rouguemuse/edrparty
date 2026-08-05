@@ -11,8 +11,8 @@ export default function Home() {
   let htmlContent = fs.readFileSync(filePath, 'utf8');
 
   // Fix relative asset paths
-  htmlContent = htmlContent.replace(/href="styles\.css"/g, 'href="/edrparty/styles.css?v=11"');
-  htmlContent = htmlContent.replace(/src="app\.js"/g, 'src="/edrparty/app.js?v=11"');
+  htmlContent = htmlContent.replace(/href="styles\.css"/g, 'href="/edrparty/styles.css?v=13"');
+  htmlContent = htmlContent.replace(/src="app\.js"/g, 'src="/edrparty/app.js?v=13"');
 
   return (
     <div dangerouslySetInnerHTML={{ __html: htmlContent }} />

@@ -1,6 +1,5 @@
 // Full Product Catalog — embedded statically, no API needed
-const PRODUCTS = [
-  {
+const PRODUCTS = [  {
     id: 1, name: 'Castle Bounce House with Slide', nameEs: 'Bricolín Castillo con Resbaladilla',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
     price: 155, priceLabel: '$155 + delivery',
@@ -18,7 +17,7 @@ const PRODUCTS = [
     quickFacts: "Space: 20'x16'", quickFactsEs: "Espacio: 20'x16'",
     description: 'Bright sunshine yellow and sky blue water slide with steep climbing ladder, safety top canopy, and splash pool.',
     descriptionEs: 'Tobogán acuático amarillo y azul. Escalera inclinada, toldo de seguridad y alberca.',
-    image: '/images/sunshine20.16.20.png',
+    image: '/images/sunshine_splash_lawn.png',
     wetDry: 'wet', available: true, availableQuantity: 1, popular: true,
     specSpace: "20' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
@@ -40,7 +39,7 @@ const PRODUCTS = [
     quickFacts: "Space: 18'x15'", quickFactsEs: "Espacio: 18'x15'",
     description: 'Action-packed Ninja Turtles commercial bouncer with high mesh ventilation windows and safety entrance step.',
     descriptionEs: 'Bricolín temático de las Tortugas Ninja. Ventanas de malla y escalón de seguridad.',
-    image: '/images/Ninjaturlesbounce_18.15.20.png',
+    image: '/images/ninja_turtles_18x15.jpeg',
     wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
     specSpace: "18' x 15'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
@@ -51,7 +50,7 @@ const PRODUCTS = [
     quickFacts: "Space: 12'x12'", quickFactsEs: "Espacio: 12'x12'",
     description: 'Royal pink and purple princess castle bouncer. Compact sizing for smaller backyards and birthday parties.',
     descriptionEs: 'Bricolín castillo de princesas rosa y morado. Tamaño compacto ideal para patios residenciales.',
-    image: '/images/princess12.12.png',
+    image: '/images/princess_castle_lawn.png',
     wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
     specSpace: "12' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
@@ -78,13 +77,24 @@ const PRODUCTS = [
     specSpace: "14' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
   {
+    id: 15, name: 'Tinker Bell Magic Bounce House (12x12)', nameEs: 'Bricolín Tinker Bell Magic (12x12)',
+    category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
+    price: 155, priceLabel: '$155 + delivery',
+    quickFacts: "Space: 12'x12'", quickFactsEs: "Espacio: 12'x12'",
+    description: 'Beautiful fairy-themed Tinker Bell bouncer. Includes bright colors, safety ramp, and high-visibility mesh windows.',
+    descriptionEs: 'Bricolín temático de hadas Tinker Bell. Colores brillantes, escalón de seguridad y ventanas de malla.',
+    image: '/images/tinker_bell_12x12.jpeg',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "12' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
     id: 6, name: 'Rainbow Double Slide Bounce Combo', nameEs: 'Combo Inflable Arcoíris Doble Resbaladilla',
     category: 'Bounce Houses', categoryEs: 'Bricolines', categoryKey: 'bounce', step: 'bounce',
     price: 235, priceLabel: '$235 + delivery',
     quickFacts: "Space: 30'x16'", quickFactsEs: "Espacio: 30'x16'",
     description: 'Multi-activity rainbow castle bouncer with dual side exit slides, onion turrets, and central jump area.',
     descriptionEs: 'Bricolín multi-actividad con doble resbaladilla lateral y área central de salto.',
-    image: '/images/rainbow_combo_studio.jpg',
+    image: '/images/rainbow_double_slide_combo.png',
     wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
     specSpace: "30' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
@@ -95,7 +105,7 @@ const PRODUCTS = [
     quickFacts: "Space: 20'x16'", quickFactsEs: "Espacio: 20'x16'",
     description: 'Towering 20ft tall water slide in blue, yellow, and red. Steep climbing ramp, top safety mesh, and deep splash landing pool.',
     descriptionEs: 'Imponente tobogán acuático de 20 pies de alto. Malla superior de seguridad y alberca.',
-    image: '/images/water_slide_20x16_studio.jpg',
+    image: '/images/coral_red_water_slide.png',
     wetDry: 'wet', available: true, availableQuantity: 1, popular: true,
     specSpace: "20' x 16'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
@@ -106,7 +116,7 @@ const PRODUCTS = [
     quickFacts: "Space: 25'x12'", quickFactsEs: "Espacio: 25'x12'",
     description: 'Head-to-head competitive dual lane bungee run. Twin runway lanes, velcro marker batons, and padded back wall.',
     descriptionEs: 'Pista de carreras bungee interactiva frente a frente. Dos carriles paralelos.',
-    image: '/images/bungee_run_studio.jpg',
+    image: '/images/bungee_run_interactive.png',
     wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
     specSpace: "25' x 12'", specCapacity: '1 unit', specPower: '1 Blower', specAge: 'All Ages'
   },
@@ -118,7 +128,7 @@ const PRODUCTS = [
     quickFactsEs: 'Paquetes desde 1 mesa + 8 sillas hasta 6 mesas + 50 sillas',
     description: 'White folding chairs and 6ft banquet tables. Multiple package sizes available — from intimate gatherings to large events.',
     descriptionEs: 'Sillas blancas plegables y mesas de banquete de 6ft. Varios tamaños de paquetes disponibles.',
-    image: '/images/tables_ref.png',
+    image: '/images/tables_chairs_package.png',
     wetDry: 'dry', available: true, availableQuantity: 10, popular: false,
     specSpace: "6' x 3'", specCapacity: 'Up to 50 guests', specPower: 'None', specAge: 'All Ages',
     detailsLink: '/rentals/tables-chairs'

@@ -23,7 +23,7 @@ export const translations: Translations = {
   "seats_up_to_8": { en: "Seats up to 8", es: "Capacidad para hasta 8 personas" },
   // Map / General
   "custom_delivery_quote_required": { en: "Custom delivery quote required", es: "Se requiere cotización de envío" },
-  "free_delivery_policy": { en: "Free local delivery on orders of $349+ within 15 miles.", es: "Entrega local gratis en pedidos de $349+ dentro de 15 millas." },
+  "free_delivery_policy": { en: "Free local delivery on orders of $300+ or any Package Deal.", es: "Entrega local gratis en pedidos de $300+ o cualquier Paquete." },
   // Product Details
   "actual_dimensions": { en: "Actual Dimensions", es: "Dimensiones reales" },
   "required_setup_area": { en: "Required Setup Area", es: "Área de instalación requerida" },

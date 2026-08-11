@@ -55,10 +55,10 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
           </h2>
           <div className="flex flex-col gap-4">
             {[
-              { t: 1, c: 8, p: 34 },
-              { t: 2, c: 16, p: 68 },
-              { t: 3, c: 24, p: 102 },
-              { t: 4, c: 32, p: 136 },
+              { t: 1, c: 8, p: 30 }, // Using correct db pricing: 1 table ($10) + 8 chairs ($2.50 ea) = $30
+              { t: 2, c: 16, p: 60 },
+              { t: 3, c: 24, p: 90 },
+              { t: 4, c: 32, p: 120 },
             ].map((pkg, i) => (
               <div key={i} className="flex justify-between items-center p-4 border rounded-xl hover:border-blue-500 transition-colors cursor-pointer bg-slate-50 hover:bg-white">
                 <div>
@@ -66,8 +66,15 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
                   <p className="text-sm text-slate-500">{t('seats_up_to_8').replace('8', pkg.c.toString())}</p>
                 </div>
                 <div className="text-right">
-                  <span className="block font-bold text-lg text-blue-700">$\{(pkg.p).toFixed(2)}</span>
-                  <button className="text-sm font-semibold text-blue-600 hover:underline">{t('add_to_party')}</button>
+                  <span className="block font-bold text-lg text-blue-700">${(pkg.p).toFixed(2)}</span>
+                  <button 
+                    className="btn-add-preset text-sm font-semibold text-blue-600 hover:underline"
+                    data-tables={pkg.t} 
+                    data-chairs={pkg.c} 
+                    data-price={pkg.p}
+                  >
+                    {t('add_to_party')}
+                  </button>
                 </div>
               </div>
             ))}
@@ -75,7 +82,20 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
         </div>
 
         {/* Custom Quantity */}
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div 
+          className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200"
+          data-chair-id={chair?.id}
+          data-chair-price={chair?.base_price}
+          data-chair-name-en={chair?.name_en}
+          data-chair-name-es={chair?.name_es}
+          data-chair-image={chair?.image}
+          data-table-id={table?.id}
+          data-table-price={table?.base_price}
+          data-table-name-en={table?.name_en}
+          data-table-name-es={table?.name_es}
+          data-table-image={table?.image}
+          id="customQuantityContainer"
+        >
           <h2 className="text-2xl font-bold mb-6" style={{fontFamily: 'Bricolage Grotesque, sans-serif'}}>
             {lang === 'es' ? 'Cantidades Personalizadas' : 'Custom Quantity'}
           </h2>
@@ -90,7 +110,7 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
                   <p className="text-slate-500 text-sm">${chair.base_price.toFixed(2)} {lang === 'es' ? 'cada una' : 'each'}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <select className="border rounded-lg px-3 py-2 bg-white font-semibold outline-none focus:border-blue-500">
+                  <select id="selectChairs" className="border rounded-lg px-3 py-2 bg-white font-semibold outline-none focus:border-blue-500">
                     <option value="0">0</option>
                     {[...Array(50)].map((_, i) => (
                       <option key={i+1} value={i+1}>{i+1}</option>
@@ -109,7 +129,7 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
                   <p className="text-slate-500 text-sm">${table.base_price.toFixed(2)} {lang === 'es' ? 'cada una' : 'each'}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <select className="border rounded-lg px-3 py-2 bg-white font-semibold outline-none focus:border-blue-500">
+                  <select id="selectTables" className="border rounded-lg px-3 py-2 bg-white font-semibold outline-none focus:border-blue-500">
                     <option value="0">0</option>
                     {[...Array(20)].map((_, i) => (
                       <option key={i+1} value={i+1}>{i+1}</option>
@@ -119,7 +139,7 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
               </div>
             )}
 
-            <button className="w-full mt-4 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-xl transition-colors">
+            <button id="btnAddCustom" className="w-full mt-4 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-xl transition-colors">
               {lang === 'es' ? 'Agregar Selección' : 'Add Selection to Party'}
             </button>
 
@@ -127,6 +147,154 @@ export default async function TablesChairsPage({ searchParams }: { searchParams:
         </div>
 
       </div>
+
+      <script dangerouslySetInnerHTML={{ __html: `
+        document.addEventListener('DOMContentLoaded', () => {
+          const lang = '${lang}';
+          
+          // Helper to redirect to homepage with cart open
+          const redirectToHomeWithCart = () => {
+            window.location.href = '/?wishlist=open&lang=' + lang;
+          };
+
+          // Helper to write to local storage wishlist
+          const addOrReplaceWishlistItem = (item) => {
+            let wishlist = [];
+            try {
+              wishlist = JSON.parse(localStorage.getItem('edr_wishlist')) || [];
+            } catch (e) {
+              wishlist = [];
+            }
+            
+            // Remove existing version of this product if present
+            wishlist = wishlist.filter(w => w.id !== item.id);
+            
+            // Add if quantity is greater than 0
+            if (item.qty > 0) {
+              wishlist.push(item);
+            }
+            
+            localStorage.setItem('edr_wishlist', JSON.stringify(wishlist));
+          };
+
+          // Preset Packages click handler
+          document.querySelectorAll('.btn-add-preset').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              
+              const tablesCount = parseInt(btn.getAttribute('data-tables')) || 0;
+              const chairsCount = parseInt(btn.getAttribute('data-chairs')) || 0;
+              
+              const container = document.getElementById('customQuantityContainer');
+              
+              // Get details from attributes
+              const chairId = parseInt(container.getAttribute('data-chair-id'));
+              const chairPrice = parseFloat(container.getAttribute('data-chair-price'));
+              const chairNameEn = container.getAttribute('data-chair-name-en');
+              const chairNameEs = container.getAttribute('data-chair-name-es');
+              const chairImage = container.getAttribute('data-chair-image');
+              
+              const tableId = parseInt(container.getAttribute('data-table-id'));
+              const tablePrice = parseFloat(container.getAttribute('data-table-price'));
+              const tableNameEn = container.getAttribute('data-table-name-en');
+              const tableNameEs = container.getAttribute('data-table-name-es');
+              const tableImage = container.getAttribute('data-table-image');
+
+              if (chairsCount > 0 && chairId) {
+                addOrReplaceWishlistItem({
+                  id: chairId,
+                  name: chairsCount + ' x ' + chairNameEn,
+                  nameEs: chairsCount + ' x ' + chairNameEs,
+                  price: chairPrice * chairsCount,
+                  priceLabel: '$' + (chairPrice * chairsCount).toFixed(2) + ' total',
+                  image: chairImage,
+                  qty: chairsCount,
+                  wetDry: 'dry',
+                  available: true
+                });
+              }
+
+              if (tablesCount > 0 && tableId) {
+                addOrReplaceWishlistItem({
+                  id: tableId,
+                  name: tablesCount + ' x ' + tableNameEn,
+                  nameEs: tablesCount + ' x ' + tableNameEs,
+                  price: tablePrice * tablesCount,
+                  priceLabel: '$' + (tablePrice * tablesCount).toFixed(2) + ' total',
+                  image: tableImage,
+                  qty: tablesCount,
+                  wetDry: 'dry',
+                  available: true
+                });
+              }
+
+              redirectToHomeWithCart();
+            });
+          });
+
+          // Custom selection click handler
+          const btnAddCustom = document.getElementById('btnAddCustom');
+          if (btnAddCustom) {
+            btnAddCustom.addEventListener('click', (e) => {
+              e.preventDefault();
+              
+              const chairsCount = parseInt(document.getElementById('selectChairs').value) || 0;
+              const tablesCount = parseInt(document.getElementById('selectTables').value) || 0;
+              
+              if (chairsCount === 0 && tablesCount === 0) {
+                alert(lang === 'es' ? 'Por favor seleccione al menos 1 silla o mesa.' : 'Please select at least 1 chair or table.');
+                return;
+              }
+
+              const container = document.getElementById('customQuantityContainer');
+              
+              // Get details from attributes
+              const chairId = parseInt(container.getAttribute('data-chair-id'));
+              const chairPrice = parseFloat(container.getAttribute('data-chair-price'));
+              const chairNameEn = container.getAttribute('data-chair-name-en');
+              const chairNameEs = container.getAttribute('data-chair-name-es');
+              const chairImage = container.getAttribute('data-chair-image');
+              
+              const tableId = parseInt(container.getAttribute('data-table-id'));
+              const tablePrice = parseFloat(container.getAttribute('data-table-price'));
+              const tableNameEn = container.getAttribute('data-table-name-en');
+              const tableNameEs = container.getAttribute('data-table-name-es');
+              const tableImage = container.getAttribute('data-table-image');
+
+              if (chairsCount > 0 && chairId) {
+                addOrReplaceWishlistItem({
+                  id: chairId,
+                  name: chairsCount + ' x ' + chairNameEn,
+                  nameEs: chairsCount + ' x ' + chairNameEs,
+                  price: chairPrice * chairsCount,
+                  priceLabel: '$' + (chairPrice * chairsCount).toFixed(2) + ' total',
+                  image: chairImage,
+                  qty: chairsCount,
+                  wetDry: 'dry',
+                  available: true
+                });
+              }
+
+              if (tablesCount > 0 && tableId) {
+                addOrReplaceWishlistItem({
+                  id: tableId,
+                  name: tablesCount + ' x ' + tableNameEn,
+                  nameEs: tablesCount + ' x ' + tableNameEs,
+                  price: tablePrice * tablesCount,
+                  priceLabel: '$' + (tablePrice * tablesCount).toFixed(2) + ' total',
+                  image: tableImage,
+                  qty: tablesCount,
+                  wetDry: 'dry',
+                  available: true
+                });
+              }
+
+              redirectToHomeWithCart();
+            });
+          }
+        });
+      ` }} />
     </div>
   );
 }

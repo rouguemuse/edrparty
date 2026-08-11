@@ -206,7 +206,7 @@ const TRANSLATIONS = {
   request_a_quote: { en: 'Request a Quote', es: 'Solicitar cotización' },
   seats_up_to_8: { en: 'Seats up to 8', es: 'Capacidad para hasta 8 personas' },
   custom_delivery_quote_required: { en: 'Custom delivery quote required', es: 'Se requiere cotización de envío' },
-  free_delivery_policy: { en: 'Free local delivery on orders of $349+ within 15 miles.', es: 'Entrega local gratis en pedidos de $349+ dentro de 15 millas.' }
+  free_delivery_policy: { en: 'Free local delivery on orders of $300+ or any Package Deal.', es: 'Entrega local gratis en pedidos de $300+ o cualquier Paquete.' }
 };
 
 function t(key) {
@@ -255,6 +255,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   updateWishlistCount();
   setupEventListeners();
   initParallax();
+
+  // Open wishlist drawer if query parameter is present (e.g., redirected from tables/chairs page)
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("wishlist") === "open") {
+    setTimeout(() => {
+      if (typeof window.openWishlistDrawerDirect === "function") {
+        window.openWishlistDrawerDirect();
+      }
+    }, 400);
+  }
 });
 
 function toggleLanguage() {

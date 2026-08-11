@@ -132,6 +132,39 @@ const PRODUCTS = [  {
     wetDry: 'dry', available: true, availableQuantity: 10, popular: false,
     specSpace: "6' x 3'", specCapacity: 'Up to 50 guests', specPower: 'None', specAge: 'All Ages',
     detailsLink: '/rentals/tables-chairs'
+  },
+  {
+    id: 20, name: 'Backyard Bounce & Seating Bundle', nameEs: 'Paquete de Castillo y Sillas de Jardín',
+    category: 'Packages', categoryEs: 'Paquetes', categoryKey: 'packages', step: 'packages',
+    price: 185, priceLabel: '$185 + delivery',
+    quickFacts: "1 Bounce House + 1 Table + 8 Chairs", quickFactsEs: "1 Bricolín + 1 Mesa + 8 Sillas",
+    description: 'Perfect for backyard birthday parties! Choose any standard bounce house (Tinker Bell, Mickey Mouse, Princess Castle, or Castle) and get 1 premium 6ft banquet table and 8 folding chairs.',
+    descriptionEs: '¡Perfecto para cumpleaños! Elige cualquier inflable estándar (Tinker Bell, Mickey Mouse, Princess Castle o Castillo estándar) más 1 mesa de banquete y 8 sillas plegables.',
+    image: '/images/princess_castle_lawn.png',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "20' x 20'", specCapacity: '1 Bounce + 8 Seats', specPower: '1 Blower', specAge: 'All Ages'
+  },
+  {
+    id: 21, name: 'Double the Fun Package (Water & Play)', nameEs: 'Paquete Doble Diversión (Agua y Juego)',
+    category: 'Packages', categoryEs: 'Paquetes', categoryKey: 'packages', step: 'packages',
+    price: 449, priceLabel: '$449 — FREE local delivery!',
+    quickFacts: "1 Water Slide + 1 Bounce + 2 Tables + 16 Chairs", quickFactsEs: "1 Tobogán + 1 Inflable + 2 Mesas + 16 Sillas",
+    description: 'The ultimate summer party setup! Includes 1 water slide (Sunshine Splash or 20ft Water Slide), 1 bounce house of choice, 2 banquet tables, and 16 folding chairs. Qualifies for FREE local delivery!',
+    descriptionEs: '¡El mejor paquete para el verano! Incluye 1 tobogán de agua, 1 inflable estándar, 2 mesas y 16 sillas. ¡Califica para entrega local GRATUITA!',
+    image: '/images/rainbow_double_slide_combo.png',
+    wetDry: 'wet', available: true, availableQuantity: 1, popular: true,
+    specSpace: "30' x 20'", specCapacity: '2 Inflatables + 16 Seats', specPower: '2 Blowers', specAge: 'All Ages'
+  },
+  {
+    id: 22, name: 'Ultimate Neighborhood Bash Package', nameEs: 'Paquete Gran Fiesta del Vecindario',
+    category: 'Packages', categoryEs: 'Paquetes', categoryKey: 'packages', step: 'packages',
+    price: 299, priceLabel: '$299 — FREE local delivery!',
+    quickFacts: "1 Combo Slide + 2 Tables + 16 Chairs", quickFactsEs: "1 Combo Resbaladilla + 2 Mesas + 16 Sillas",
+    description: 'A premium neighborhood bash package featuring the Rainbow Double Slide Combo (or other combo of choice), 2 banquet tables, and 16 folding chairs. Qualifies for FREE local delivery!',
+    descriptionEs: 'Un paquete premium que incluye el Combo Arcoíris Doble Resbaladilla (u otro combo de su elección), 2 mesas y 16 sillas. ¡Califica para entrega local GRATUITA!',
+    image: '/images/tropical_combo_lawn.png',
+    wetDry: 'dry', available: true, availableQuantity: 1, popular: true,
+    specSpace: "30' x 16'", specCapacity: '1 Combo + 16 Seats', specPower: '1 Blower', specAge: 'All Ages'
   }
 ];
 
@@ -272,7 +305,7 @@ function applyLanguageUI() {
   if (heroDesc) heroDesc.innerText = isEs ? "Bricolines, mesas, sillas y equipo para fiestas—entregados, desinfectados y listos antes de que lleguen tus invitados." : "Bounce houses, tables, chairs and party gear—delivered, sanitized and ready before your guests arrive.";
   if (heroBtnCheck) heroBtnCheck.innerText = isEs ? "Consulta Tu Fecha" : "Check Your Date";
   if (heroBtnRentals) heroBtnRentals.innerText = isEs ? "Ver Alquileres" : "View Rentals";
-  if (heroNote) heroNote.innerHTML = isEs ? '<span>Entrega local gratis en $349+ dentro de 15 millas</span>' : '<span>Free local delivery on $349+ within 15 miles</span>';
+  if (heroNote) heroNote.innerHTML = isEs ? '<span>Entrega local gratis en $300+ o cualquier paquete</span>' : '<span>Free local delivery on $300+ or any package</span>';
 
   // Booking Bar
   const dateLabel = document.querySelector('label[for="eventDate"]');
@@ -292,7 +325,7 @@ function applyLanguageUI() {
   // Trust Strip
   const trustItems = document.querySelectorAll(".trust-item");
   if (trustItems.length >= 3) {
-    trustItems[0].innerHTML = isEs ? '<span class="trust-check">✓</span> Entrega Local Gratis $349+' : '<span class="trust-check">✓</span> Free Local Delivery on $349+';
+    trustItems[0].innerHTML = isEs ? '<span class="trust-check">✓</span> Entrega Local Gratis $300+' : '<span class="trust-check">✓</span> Free Local Delivery on $300+';
     trustItems[1].innerHTML = isEs ? '<span class="trust-check">✓</span> Limpio y Desinfectado' : '<span class="trust-check">✓</span> Cleaned & Sanitized';
     trustItems[2].innerHTML = isEs ? '<span class="trust-check">✓</span> Garantía de Puntualidad' : '<span class="trust-check">✓</span> On-Time Guarantee';
   }
@@ -319,7 +352,7 @@ function applyLanguageUI() {
     jumpCards[2].querySelector(".category-jump-title").innerText = isEs ? "Mesas y Sillas" : "Tables & Chairs";
     jumpCards[2].querySelector(".category-jump-sub").innerText = isEs ? "Juegos de mesas de banquete" : "Commercial white banquet sets";
 
-    jumpCards[3].querySelector(".category-jump-title").innerText = "Packages";
+    jumpCards[3].querySelector(".category-jump-title").innerText = isEs ? "Paquetes" : "Packages";
     jumpCards[3].querySelector(".category-jump-sub").innerText = isEs ? "Paquetes que califican para envío gratis" : "Bundles qualifying for free delivery";
   }
 
@@ -336,7 +369,7 @@ function applyLanguageUI() {
     stepTabs[1].querySelector("span").innerText = isEs ? "Bricolines" : "Bounce Houses";
     stepTabs[2].querySelector("span").innerText = isEs ? "Toboganes de Agua" : "Water Slides";
     stepTabs[3].querySelector("span").innerText = isEs ? "Mesas y Sillas" : "Tables & Chairs";
-    stepTabs[4].querySelector("span").innerText = "Packages";
+    stepTabs[4].querySelector("span").innerText = isEs ? "Paquetes" : "Packages";
   }
 
   // Process Section Headings
@@ -380,6 +413,33 @@ function applyLanguageUI() {
 
   const accPay = document.getElementById("acceptedPaymentsText");
   if (accPay) accPay.innerText = isEs ? "Pagos Aceptados: Zelle, Venmo, Efectivo" : "Accepted Payments: Zelle, Venmo, Cash";
+
+  // Delivery details section translations
+  const delHeading = document.getElementById("deliveryDetailsHeading");
+  if (delHeading) delHeading.innerText = isEs ? "Detalles de Envío Local" : "Local Delivery Details";
+
+  const delFreeTitle = document.getElementById("deliveryFreeTitle");
+  if (delFreeTitle) delFreeTitle.innerText = isEs ? "ENVÍO GRATUITO" : "FREE DELIVERY";
+
+  const delFreeDesc = document.getElementById("deliveryFreeDesc");
+  if (delFreeDesc) delFreeDesc.innerText = isEs ? "En todos los pedidos de $300+ o cualquier Paquete" : "On all orders $300+ or any Package Deal";
+
+  const delFreeSub = document.getElementById("deliveryFreeSub");
+  if (delFreeSub) delFreeSub.innerText = isEs ? "(Dentro de nuestro rango local de 15 millas)" : "(Within our 15-mile local service area)";
+
+  const delFlatTitle = document.getElementById("deliveryFlatTitle");
+  if (delFlatTitle) delFlatTitle.innerText = isEs ? "ENVÍO FIJO" : "FLAT DELIVERY";
+
+  const delFlatDesc = document.getElementById("deliveryFlatDesc");
+  if (delFlatDesc) delFlatDesc.innerText = isEs ? "$39 Envío y Configuración Local" : "$39 Local Delivery & Setup";
+
+  const delFlatSub = document.getElementById("deliveryFlatSub");
+  if (delFlatSub) delFlatSub.innerText = isEs ? "(Para pedidos menores a $300 que no son paquetes)" : "(For orders under $300 that are not package deals)";
+
+  const delFooter = document.getElementById("deliveryFooterText");
+  if (delFooter) delFooter.innerText = isEs 
+    ? "Incluye la entrega completa, el anclaje de seguridad y la recolección de los inflables. Ingresa tu dirección en la barra de arriba para cotizaciones instantáneas."
+    : "Complete delivery, safety setup, anchors, and pickup are included. Enter your address in our availability bar above for instant calculations.";
 }
 
 function initParallax() {
@@ -575,11 +635,12 @@ function updateWishlistCount() {
   const subtotal = state.wishlist.reduce((acc, item) => acc + item.price, 0);
   
   let deliveryFee = 0;
+  const hasPackage = state.wishlist.some(item => item.categoryKey === 'packages' || item.step === 'packages');
   if (subtotal > 0) {
-    if (subtotal >= 349) {
+    if (subtotal >= 300 || hasPackage) {
       deliveryFee = 0;
     } else {
-      deliveryFee = 49;
+      deliveryFee = 39;
     }
   }
 
@@ -593,11 +654,11 @@ function updateWishlistCount() {
   if (deliveryLabel) {
     if (count === 0) {
       deliveryLabel.innerHTML = "$0";
-    } else if (subtotal >= 349) {
-      deliveryLabel.innerHTML = `<strong style="color:var(--cobalt);">${isEs ? 'GRATIS (Pedido $349+)' : 'FREE ($349+ Tier)'}</strong>`;
+    } else if (subtotal >= 300 || hasPackage) {
+      deliveryLabel.innerHTML = `<strong style="color:var(--cobalt);">${isEs ? 'GRATIS' : 'FREE'}</strong>`;
     } else {
-      const needed = 349 - subtotal;
-      deliveryLabel.innerHTML = `$49 <span style="font-size:0.8rem; color:var(--red); display:block;">(${isEs ? 'Agrega $' + needed + ' para envío GRATIS' : 'Add $' + needed + ' for FREE delivery'})</span>`;
+      const needed = 300 - subtotal;
+      deliveryLabel.innerHTML = `$39 <span style="font-size:0.8rem; color:var(--red); display:block;">(${isEs ? 'Agrega $' + needed + ' para envío GRATIS' : 'Add $' + needed + ' for FREE delivery'})</span>`;
     }
   }
 
@@ -687,8 +748,8 @@ function openDetailsDrawer(productId) {
     </table>
 
     <div style="background-color: var(--bg-subtle); border: var(--border-subtle); border-radius: var(--radius-soft); padding: 1rem; margin-bottom: 1.2rem;">
-      <h5 style="font-size:13.5px; margin-bottom:0.4rem; font-weight:700;">${isEs ? 'Política de Envío Gratis ($349+)' : 'Free Delivery Policy ($349+ Orders)'}</h5>
-      <p style="font-size:13.5px; line-height:1.5;">${isEs ? 'Entrega local gratis dentro de 15 millas en pedidos de $349+. Pedidos menores a $349 tienen una cuota de $49.' : 'Free local delivery within 15 miles on all party plans $349+. Orders under $349 incur a flat $49 local delivery fee.'}</p>
+      <h5 style="font-size:13.5px; margin-bottom:0.4rem; font-weight:700;">${isEs ? 'Envío Gratis ($300+)' : 'Free Delivery Policy ($300+)'}</h5>
+      <p style="font-size:13.5px; line-height:1.5;">${isEs ? 'Entrega local gratis en pedidos de $300+ o cualquier paquete. Pedidos menores tienen una cuota de $39.' : 'Free local delivery on all party plans $300+ or any Package Deal. Orders under $300 incur a flat $39 local delivery fee.'}</p>
     </div>
 
     <button class="btn-brutal" style="background-color: ${actionBtnBg}; color: ${actionBtnColor}; width: 100%;" onclick="toggleWishlist(${product.id}); closeAllDrawers();">${actionBtnText}</button>
@@ -802,7 +863,7 @@ function setupEventListeners() {
         return;
       }
       
-      const subtotal = state.wishlist.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      const subtotal = state.wishlist.reduce((sum, item) => sum + (item.price * (item.qty || 1)), 0);
       const minOrder = state.routingState.minimum_order || 0;
       
       if (subtotal < minOrder) {
@@ -837,7 +898,7 @@ function setupEventListeners() {
           zip: state.zipCode,
           preferred_language: state.lang,
           preferred_payment_method: paymentPref,
-          items: state.wishlist.map(w => ({ product_id: w.id || 1, quantity: w.qty }))
+          items: state.wishlist.map(w => ({ product_id: w.id || 1, quantity: w.qty || 1 }))
         };
 
         const res = await fetch('/api/inquiries', {
@@ -927,7 +988,7 @@ function renderDeliveryStatus() {
   }
 
   // Calculate cart subtotal to determine if they met minimum order
-  const subtotal = state.wishlist.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  const subtotal = state.wishlist.reduce((sum, item) => sum + (item.price * (item.qty || 1)), 0);
   const minOrder = rt.minimum_order || 0;
   
   let html = `<div style="font-size:0.95rem;">`;

@@ -356,17 +356,11 @@ const insertZone = db.prepare(`
   ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 `);
 
-// Zone 1
-insertZone.run('Zone 1 — Local', 'Zona 1 — Local', 0, 15, 39.0, 0, 349.0, 0, 0);
-// Zone 2
-insertZone.run('Zone 2 — Near-Local', 'Zona 2 — Cercana', 15, 25, 49.0, 150.0, null, 0, 0);
-// Zone 3
-insertZone.run('Zone 3 — Regional', 'Zona 3 — Regional', 25, 35, 79.0, 225.0, null, 0, 0);
-// Zone 4
-insertZone.run('Zone 4 — Extended', 'Zona 4 — Extendida', 35, 50, 119.0, 325.0, null, 1, 0);
-// Zone 5
-insertZone.run('Zone 5 — Long-Distance', 'Zona 5 — Larga Distancia', 50, 65, 159.0, 425.0, null, 1, 0);
-// Zone 6
-insertZone.run('Outside Standard Area', 'Fuera del Área Estándar', 65, null, null, 0, null, 1, 1);
+// Zone 1 — Local/Standard (0 to 35 miles): Standard flat fee, free delivery over $300 or package
+insertZone.run('Zone 1 — Local', 'Zona 1 — Local', 0, 35, 39.0, 0, 300.0, 0, 0);
+// Zone 2 — Extended (35 to 50 miles)
+insertZone.run('Zone 2 — Extended', 'Zona 2 — Extendida', 35, 50, null, 0, null, 1, 1);
+// Zone 3 — Outside Area
+insertZone.run('Outside Standard Area', 'Fuera del Área Estándar', 50, null, null, 0, null, 1, 1);
 
 console.log('Delivery zones seeded.');

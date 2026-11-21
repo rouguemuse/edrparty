@@ -7,7 +7,7 @@ import { requireAdminSession } from '@/lib/auth';
 export async function POST(request: Request) {
   try {
     const auth = await requireAdminSession();
-    if (auth.status === 401) return NextResponse.json({ error: auth.error }, { status: 401 });
+    if (!auth.success || auth.status === 401) return NextResponse.json({ error: auth.error }, { status: 401 });
 
     const body = await request.json();
     const { inquiryId, items, eventDate, holdHours } = body;
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
 export async function PATCH(request: Request) {
   try {
     const auth = await requireAdminSession();
-    if (auth.status === 401) return NextResponse.json({ error: auth.error }, { status: 401 });
+    if (!auth.success || auth.status === 401) return NextResponse.json({ error: auth.error }, { status: 401 });
 
     const body = await request.json();
     const { reservationId, action } = body; // action: 'confirm', 'cancel'

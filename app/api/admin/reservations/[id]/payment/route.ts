@@ -6,7 +6,7 @@ import crypto from 'crypto';
 export async function POST(request: Request, { params }: { params: { id: string } }) {
   try {
     const auth = await requireAdminSession();
-    if (auth.status === 401) return NextResponse.json({ error: auth.error }, { status: 401 });
+    if (!auth.success || auth.status === 401) return NextResponse.json({ error: auth.error }, { status: 401 });
 
     const reservationId = parseInt(params.id, 10);
     const body = await request.json();

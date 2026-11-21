@@ -6,7 +6,7 @@ import { requireAdminSession } from '@/lib/auth';
 
 export default async function AdminDashboard() {
   const auth = await requireAdminSession();
-  if (auth.status === 401) {
+  if (!auth.success || auth.status === 401) {
     redirect('/admin/login');
   }
 
